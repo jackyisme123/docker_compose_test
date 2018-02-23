@@ -1,0 +1,25 @@
+version: '3'
+services:
+  frontend:
+    build: ./frontend
+    links:
+      - backend
+    ports:
+      - "8080:8080"
+
+  backend:
+    build: ./backend
+    links:
+      - mariadb
+    ports:
+      - "4941:4941"
+
+  mariadb:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cce
+      MYSQL_USER: root
+      MYSQL_PASSWORD: secret
+    ports:
+      - "3306:3306"
