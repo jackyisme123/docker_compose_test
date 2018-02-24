@@ -12,7 +12,7 @@ RUN npm run build
 RUN rm -rf ./src
 
 
-ENV PORT=8080
+ENV PORT=8081
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 
 CMD [ "node", "server.js" ]
