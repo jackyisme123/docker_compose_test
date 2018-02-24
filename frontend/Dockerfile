@@ -15,6 +15,8 @@ RUN rm -rf ./src
 ENV PORT=8081
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 
+EXPOSE 8081
+
 CMD [ "node", "server.js" ]
 
 USER node
